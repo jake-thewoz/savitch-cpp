@@ -27,6 +27,45 @@ using namespace std;
 
 int main()
 {
+	double loanValue, interestRate, period, faceValue, monthlyPayment;
+	char goAgain('y');
+	
+	cout << "This program calculates figures for a discount installment loan." << endl << endl;
+
+	while (goAgain == 'y' | goAgain == 'Y')
+	{
+		cout <<	"Enter the needed amount:" << endl;
+		cin >> loanValue;
+		cout << "Enter the interest rate in decimal form: (ie 7% = .07)" << endl;
+		cin >> interestRate;
+		cout << "Enter the period of the loan in months:" << endl;
+		cin >> period;
+
+		// Now we derive the faceValue from the loanValue
+		faceValue = loanValue / (1 - (interestRate * (period / 12)));
+
+		// Then we can calculate the monthly payment easily
+		monthlyPayment = faceValue / period;
+
+		// Because sometimes with very large numbers faceValue and monthlyPayment
+		// can end up being negative, let's fix that. I'm using if statements
+		// to avoid adding in the stdlib for only the abs() function
+		if (faceValue < 0)
+		{
+			faceValue *= -1;
+			monthlyPayment *= -1;
+		}
+
+		cout.setf(ios::fixed);
+		cout.setf(ios::showpoint);
+		cout.precision(2);
+
+		cout << "Your total loan value is $" << faceValue << endl <<
+			"and your monthly payment will be $" << monthlyPayment << endl <<
+			"Would you like to run this again? (y|n)" << endl;
+
+		cin >> goAgain;
+	}
 
 	return 0;
 }
