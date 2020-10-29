@@ -10,3 +10,6 @@ I'm including the object files as well as the source code. The object files are 
   2. Programming Projects- these are listed as 'project1.cpp'. These are more difficult and challenging.
   
 Some of the programs in the textbook will be missing from my collection. For the most part, this is because they were rendundant for me personally. For example, many of the Practice Programs cover the same topics, but used slightly differently. Because this is an educational venture for me, I want to spend most of my time on the programs that will bring me the most benefit.
+
+Edit (10-28-2020):
+A lot of the early chapters have very basic information, so the programs are not very challenging. Since the goal of this project is to stay sharp, I'll only do a few practice programs from chapters where the content is too simple to be challenging.
